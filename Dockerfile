@@ -31,6 +31,13 @@ RUN chmod -v +x /etc/service/*/run /etc/service/*/finish /etc/my_init.d/*.sh
 # Update apache configuration with this one
 RUN a2enmod proxy proxy_http proxy_ajp rewrite deflate substitute headers proxy_balancer proxy_connect proxy_html xml2enc authnz_ldap
 
+
+RUN cd /usr/bin/
+RUN wget https://dl.eff.org/certbot-auto
+RUN chmod a+x /usr/bin/certbot-auto
+RUN apt-get update
+RUN certbot-auto --noninteractive --os-packages-only
+
 # ports and volumes
 EXPOSE 80 443
 VOLUME /config /etc/letsencrypt

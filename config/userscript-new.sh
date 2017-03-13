@@ -51,21 +51,6 @@ fi
 export HOME="/root"
 export PATH="${PATH}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
-if [ ! -f /usr/bin/certbot-auto ]; then
-
-	echo "================================================"
-	echo " Getting Necessary LetEncrypt Dependencies"
-	echo "================================================"
-	cd /usr/bin/
-	wget https://dl.eff.org/certbot-auto
-	chmod a+x /usr/bin/certbot-auto
-	apt-get update
-	certbot-auto --noninteractive --os-packages-only
-	
-	echo "================================================"
-	echo " FINISHED! Getting LetEncrypt Dependencies"
-	echo "================================================"
-fi
 
 if [ ! -f /etc/letsencrypt/cli.ini ]; then
 	echo "================================================"
