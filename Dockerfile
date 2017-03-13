@@ -34,7 +34,7 @@ RUN a2enmod proxy proxy_http proxy_ajp rewrite deflate substitute headers proxy_
 
 RUN cd /usr/bin/
 RUN wget https://dl.eff.org/certbot-auto
-RUN chmod a+x /usr/bin/certbot-auto
+#RUN chmod a+x /usr/bin/certbot-auto
 RUN apt-get update
 RUN certbot-auto --noninteractive --os-packages-only
 

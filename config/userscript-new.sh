@@ -1,5 +1,5 @@
 #!/bin/bash
-
+RUN chmod a+x /usr/bin/certbot-auto
 appendconf="donotupdate"
 
 if [ ! -f /config/apache/site-confs/dont-erase.txt ]; then
